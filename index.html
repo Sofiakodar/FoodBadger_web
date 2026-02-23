@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodBadger — Mac &amp; iOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --border: rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+      --shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      background: rgba(0, 113, 227, 0.08);
+    }
+
+    main {
+      padding-top: 48px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    main section:first-of-type h2 {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    h2::before {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+    }
+
+    #about h2::before { content: "About"; }
+    #getting-started h2::before { content: "Getting started"; }
+    #release-notes h2::before { content: "Release notes"; }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      margin: 0 0 16px;
+      padding-left: 1.4em;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-card {
+        padding: 20px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="FoodPlate_180.png" alt="" class="logo-icon">
+        FoodBadger
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#getting-started">Getting started</a>
+        <a href="#release-notes">Release notes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="section-card">
+      <h2>FoodBadger</h2>
+      <p>
+        FoodBadger är en app för att logga mat och aktiviteter och se hur de påverkar ens hälsa. Den är framför allt gjord för de som har symtom som de vill förbättra med livsstilsfaktorer och kost (tex högt blodtryck) eller de som vill ha koll på att de får i sig rätt näringsvärden med kosten.
+</p>
+<p>
+  <ul><b>I appen kan du:</b>
+<li>Logga mat du äter (alla, eller bara matvaror du tror påverkar dig).</li>
+<li>Logga faktorer: träning, meditation, alkohol, dagsljus, egna faktorer. </li>
+<li>Logga hälsa: sömn, energi, humör, symtom m.m. </li>
+<li>Få en analys av hur den senaste veckan har varit jämfört med tidigare. </li>
+<li>Se sitt näringsintag jämföra med mål (vitaminer, mineraler, kalorier).</li>
+<li>Se korrelationer mellan faktorer och din hälsa, sömn eller energi. </li>
+<li>Logga ditt blodtryck och se vilken mat eller faktorer som påverkar. </li>
+</ul>
+<ul><b>Exempel på frågor denna app är skapad för att besvara:</b>
+<li>Finns det specifika matvaror som ger mig huvudvärk/symtom?</li>
+<li>Får jag bättre sömn de dagar jag undviker koffein, eller tränar?</li>
+<li>Hur påverkas blodtrycket av mitt intag av kalium eller salt? 
+<li>Har jag sovit bättre/tränat mer senaste veckan än vad jag brukar? </li>
+<li>Får jag bättre djupsömn om jag får i mig tillräckligt med magnesium?</li>
+<li>Får jag i mig tillräckligt protein/magnesium/etc med den kost jag äter? </li>
+</ul>
+<ul><b>Du kan använda appen på olika sätt: </b>
+<li>Logga all mat du äter och få en tydlig bild av om du får i dig de näringsämnen du bryr dig om. Se hur det påverkar din hälsa. </li>
+<li>Logga bara de matvaror som du tror påverkar dig (tex laktos, socker). </li>
+<li>Logga ett ungefärligt näringsintag för att upptäcka korrelationer med kalium, salt och socker.</li>
+<li>Logga enbart faktorer och hälsa, och se korrelationer mellan dessa (Träningens effekt på sömnen tex) eller använd som en habit tracker.</li>
+</ul>
+      </p>
+    </section>
+
+    <section id="getting-started" class="section-card">
+      <h2>Kom igång</h2>
+      <p>
+        Det finns numera en setup-guide i appen. Den kan startas från Inställningar – Konfigurera. </p>
+    <ol>
+        <li>Godkänn att appen får hämta data från Apple Health om du har och vill hämta sömndata, träningsdata etc. Appen läser bara data, skriver inget till Apple Health.</li>
+        <li>I Inställningar – Konfigurera kan du välja några alternativ för hur du vill använda FoodBadger, t.ex. för blodtryck etc, om du vill komma igång snabbt.</li>
+        <li>I inställningar – Näringsämnen, ställ in vilka näringsämnen du vill ha koll på. RDI står på alla näringsämnen – här finns även en snabbkonfiguration. Justera Järn och Protein efter ditt kön och din storlek.</li>
+        <li>I inställningar – Faktorer, ställ in vilka faktorer du vill registrera. Några är förifyllda som förslag.</li>
+      </ol></p>
+
+      <p>
+        <h3>iOS vs MacOS</h3>
+      </p>
+      <p>
+        iOS versionen kan hämta data från Apple Health, tex ditt sömndata, träningsdata och aktiva kalorier. Du behöver använda iOS-versionen för att få in det datat till Mac-versionen om du vill använda båda. 
+      </p>
+        
+        <h3>iCloud</h3>
+        <p>
+        Appen sparar ditt data i iCloud så data synkas mellan iOS och MacOS.
+        </p>
+        <p>
+        <b>OBS:</b> i dagsläget är denna synk inte perfekt, så använd helst inte iOS-versionen och MacOS-versionen samtidigt eller inom ett par minuter. Då kan i värsta fall några entries försvinna om filerna är i osynk (tex en mat du registrerat försvinner). Detta är tyvärr en stor sak att fixa senare. Om du väntar <b>minst 30 minuter</b> mellan att använda Mac- och iOS-versionen så har iCloud hunnit synka klart och då ska allt fungera fint. 
+              </p>
+    </section>
+
+    <section id="release-notes" class="section-card">
+      <h2>Release notes</h2>
+      <p>
+        <ul><b>20 februari</b>
+          <li>iCloud synk - nu synkas data mellan iOS och MacOS-apparna. </li>
+          <li>Apple health integration. Nu hämtar appen in sömndata och träningsdata från Apple Health. </li>
+          <li>Mediciner är tillagda, nu kan du logga mediciner och klockslag i Health om du har mediciner som tas flera gånger per dag. </li>
+          <li>Symptom kan nu loggas för hela dagen, eller för specifika klockslag, tex för att jämföra med medicinintag (korrelation för detta ej implementerat ännu). </li>
+          <li>En setup-guide för nya användare är skapad för att ställa in inställningarna för första gången. (Går att starta igen från Inställningar) </li>
+          <li>Många småfixar för att fixa utseende, bättre interaktion på iOS etc. </li>
+          </ul>
+          
+          <ul><b>19-22 Januari 2026</b>
+          <li>Ny integration mot DABAS matdatabas. Här finns massor av färdiga matvaror och märken (tex Arla, Anamma, etc). Just nu är det en egen sökruta, för att undvika att få 353 träffar på “apelsin” med produkter med apelsin i namnet när man bara vill ha en apelsin från Livsmedelsverket.</li> 
+          <li>I matloggningen finns nu en “Beräkna måltid” där man kan fylla i ingredienserna för en hel maträtt och sen få sin egen portion uträknad.</li> 
+          <li>Set up/Konfigurera - Här finns nu fyra möjliga mål för vad man vill använda appen till, som hjälper användare att ställa in rätt näringsvärden/faktorer för olika mål. </li>
+          <li>För dig som inte orkar logga all mat finns nu en ny funktion: “Logga ungefärligt näringsintag”. Gjord för att upptäcka korrelationer med kalium, salt och socker utan detaljerad loggning. Slå på i inställningarna eller i konfigurationen, så dyker den upp i Hälso-tabben. </li>
+          <li>Nytt näringsvärde: Omega 3. Nu finns även Omega 3 som näringsvärde (eftersom Livsmedelsverket delar upp Omega 3 i fyra olika näringsvärden).</li> 
+          <li>Appen finns nu på både Svenska och Engelska, default inställt efter vad dator/telefon är inställd på, man kan även välja språk i Inställningar. </li>
+          <li>Goals analysis/Måluppfyllelse kan nu även visa tidigare veckors måluppfyllelse och inte bara senaste veckan. </li>
+          <li>Buggfixar: Fibrer kunde på vissa ställen dyka upp dubbelt. - Näringsvärden på en custom food kan nu skrivas in med både komma och punkt. - Några näringsvärden hade fel namn på svenska i overview (järn, kalium) - Funktionalitet för att spara data även när en anpassad matvara raderas.</li>
+</li>
+
+
+        </ul>
+      </p>
+    </section>
+
+    <section id="release-notes" class="section-card">
+      <h2>Planerade features</h2>
+      <ul>
+      <li>Mac-version: Editera matentries som på iOS.</li>
+      <li>Spara en beräknad maträtt som en matvara.</li>
+      <li>Eventuellt ordna iCloud-synken på riktigt. Större omarbetning av appen krävs. </li>
+      <li>Korrelationer mellan symtom och medicinintag över dagen. Större feature. </li>
+    </ul>
+    </section>
+
+  </main>
+</body>
+</html>
