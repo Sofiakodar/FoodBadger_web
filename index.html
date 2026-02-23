@@ -193,6 +193,8 @@
         <a href="#about">About</a>
         <a href="#getting-started">Getting started</a>
         <a href="#release-notes">Release notes</a>
+        <a href="#planned-features">Planerade features</a>
+        <a href="#FAQ">FAQ</a>
       </nav>
     </div>
   </header>
@@ -307,8 +309,8 @@
       </p>
     </section>
 
-    <section id="release-notes" class="section-card">
-      <h2>Planerade features och feature requests</h2>
+    <section id="planned-features" class="section-card">
+      <h2>Planerade features</h2>
       <ul>
       <li>Mac-version: Editera matentries som på iOS.</li>
       <li>Spara en beräknad maträtt som en matvara.</li>
@@ -318,8 +320,21 @@
       <li>Ful röd 404 när man söker i DABAS ibland.</li>
       <li>Kunna sätta mål för fett och kolhydrater i form av procent av energiintaget istället för gram.</li>
       <li>Kunna logga vikt.</li>
-      </l>
+      <li>Fixa setup-guide, även för att skapa faktorer där och inte bara symptom</li>
     </ul>
+    </section>
+
+    <section id="FAQ" class="section-card">
+      <h2>FAQ</h2>
+    <p><b>Hur beräknar appen vilken träning som är low/medium/high?</b></p>
+    <p>I första hand används användarens pulzoner från Apple health. Om det saknas hämtas ålder från Apple health, och maxpuls räknas ut med den klassiska 220-ålder-beräkningen. Om det saknas, används ett default max-HR. 
+    <br>High: över 85% av max-HR.
+    <br>Medium: 70-85% av max-HR. 
+    <br>Low: under 70% av max-HR. </p>
+    <p>Om heart-rate data saknas, men effort i Apple health finns, utgår vi från effort. </p>
+    <p>Om ingen effort finns, utgår vi från workout-type. High: löpning, HIT, boxing. etc. Medium: cykling, simning, vandring etc. Low: yoga, pilates, promenader. 
+    </p>
+
     </section>
 
   </main>
