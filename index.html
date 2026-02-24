@@ -276,16 +276,19 @@
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
       <p>
-        <ul><b>24 februari</b>
-        <li>Build 10: Fixade en bugg som kunde dyka upp om man fått många errors i DABAS-sökningen i rad. </li>
+        <ul><b>24 februari - Build 10</b>
+        <li>Fixade en bugg som kunde dyka upp om man fått många errors i DABAS-sökningen i rad. </li>
+        <li>Appen hämtar nu om data från Apple health varje gång användaren går in i Health entry, samt om du drar ned på sidan (inte bara vid omstart av appen). </li>
+        <li>När man skapar/redigerar anpassad mat kan man nu se näringsvärden på engelska eller svenska utan att behöva byta språk i appen</li>
+        <li>Det går nu att välja att sätta mål för fett, kolhydrater och protein i form av procent av energiintaget istället för gram om man så önskar.</li>
       </ul>
         <ul><b>23 februari</b>
-        <li>Build 6: Appen hämtar nu vilometabolism från Apple health och visar en uppskattning (medel för de senaste 30 dagarna) under dagen, uppdaterar vid dagens slut med rätt siffra.</li>
-        <li>Build 7: När man skapar eller redigerar en anpassad matvara görs det nu i en popup, för att underlätta.</li>
-        <li>Build 7: Fixade en bugg i hur kalorier visades på iOS. </li>
         <li>Build 9: Scrollning tar bort tangentbordet på iOS.</li>
         <li>Build 9: Om ett näringsämne är påslaget men har 0 i mål så syns det nu ändå, men utan ett mål. </li>
         <li>Build 9: När man börjar redigera portionsstorlek, så tas 100 bort.</li>
+        <li>Build 7: När man skapar eller redigerar en anpassad matvara görs det nu i en popup, för att underlätta.</li>
+        <li>Build 7: Fixade en bugg i hur kalorier visades på iOS. </li>
+        <li>Build 6: Appen hämtar nu vilometabolism från Apple health och visar en uppskattning (medel för de senaste 30 dagarna) under dagen, uppdaterar vid dagens slut med rätt siffra.</li>
         </ul>
         <ul><b>20 februari</b>
           <li>iCloud synk - nu synkas data mellan iOS och MacOS-apparna. </li>
@@ -313,21 +316,21 @@
     </section>
 
     <section id="planned-features" class="section-card">
-      <h2>Planerade features</h2>
+      <h2>Feature requests:</h2>
       <ul>
       <li>Mac-version: Editera matentries som på iOS.</li>
-      <li>Spara en beräknad maträtt som en matvara.</li>
+      <li>Spara en beräknad maträtt för att kunna logga den igen. Matgrupp?</li>
       <li>Eventuellt ordna iCloud-synken på riktigt. Större omarbetning av appen krävs. </li>
       <li>Korrelationer mellan symtom och medicinintag över dagen. Större feature. </li>
       <li>Hämta sömnpoäng från Apple Health? Eller behålla som manuell subjektiv uppskattning?</li>
-      <li>Ful röd 404 när man söker i DABAS ibland.</li>
-      <li>Kunna sätta mål för fett och kolhydrater i form av procent av energiintaget istället för gram.</li>
-      <li>Kunna logga vikt.</li>
+      <li>Kunna logga vikt i Health entry, visa i Overview. Ev trendgraf.</li>
       <li>Fixa setup-guide, så användaren kan skapa faktorer där och inte bara symptom</li>
-      <li>Visa näringsämnen på engelska + svenska i redigera anpassad mat.</li>
+      <li>Done: Visa näringsämnen på engelska + svenska i redigera anpassad mat.</li>
+      <li>Done: Kunna sätta mål för fett och kolhydrater i form av procent av energiintaget istället för gram.</li>
     </ul>
     <ul><b>Rapporterade buggar</b>
-    <li>20260224: Sömndata saknas i appen, efter start kl 04. Krävde omstart av appen.</li>
+    <li>Åtgärdad: Sömndata saknas i appen, efter start kl 04. Krävde omstart av appen.</li>
+    <li>Åtgärdad: Ful röd 404 när man söker i DABAS och sen hacking upplevelse i söken ibland.</li>
   </ul>
     </section>
 
