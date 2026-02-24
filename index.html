@@ -211,8 +211,8 @@
 <li>Logga faktorer: träning, meditation, alkohol, dagsljus, egna faktorer. </li>
 <li>Logga hälsa: sömn, energi, humör, symtom m.m. </li>
 <li>Få en analys av hur den senaste veckan har varit jämfört med tidigare. </li>
-<li>Se sitt näringsintag jämföra med mål (vitaminer, mineraler, kalorier).</li>
-<li>Se korrelationer mellan faktorer och din hälsa, sömn eller energi. </li>
+<li>Se sitt näringsintag och jämföra med mål (vitaminer, mineraler, kalorier).</li>
+<li>Se korrelationer mellan faktorer och hälsa, sömn eller energi. </li>
 <li>Logga ditt blodtryck och se vilken mat eller faktorer som påverkar. </li>
 </ul>
 <ul><b>Exempel på frågor denna app är skapad för att besvara:</b>
@@ -276,6 +276,9 @@
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
       <p>
+        <ul><b>24 februari</b>
+        <li>Build 10: Fixade en bugg som kunde dyka upp om man fått många errors i DABAS-sökningen i rad. </li>
+      </ul>
         <ul><b>23 februari</b>
         <li>Build 6: Appen hämtar nu vilometabolism från Apple health och visar en uppskattning (medel för de senaste 30 dagarna) under dagen, uppdaterar vid dagens slut med rätt siffra.</li>
         <li>Build 7: När man skapar eller redigerar en anpassad matvara görs det nu i en popup, för att underlätta.</li>
@@ -320,8 +323,12 @@
       <li>Ful röd 404 när man söker i DABAS ibland.</li>
       <li>Kunna sätta mål för fett och kolhydrater i form av procent av energiintaget istället för gram.</li>
       <li>Kunna logga vikt.</li>
-      <li>Fixa setup-guide, även för att skapa faktorer där och inte bara symptom</li>
+      <li>Fixa setup-guide, så användaren kan skapa faktorer där och inte bara symptom</li>
+      <li>Visa näringsämnen på engelska + svenska i redigera anpassad mat.</li>
     </ul>
+    <ul><b>Rapporterade buggar</b>
+    <li>20260224: Sömndata saknas i appen, efter start kl 04. Krävde omstart av appen.</li>
+  </ul>
     </section>
 
     <section id="FAQ" class="section-card">
@@ -334,6 +341,11 @@
     <p>Om heart-rate data saknas, men effort i Apple health finns, utgår vi från effort. </p>
     <p>Om ingen effort finns, utgår vi från workout-type. High: löpning, HIT, boxing. etc. Medium: cykling, simning, vandring etc. Low: yoga, pilates, promenader. 
     </p>
+    <p><b>Vad menas med favoriter i matvaror?</b>
+    <br>Så fort du har loggat en matvara en gång, sparas den i favoriter med den portionssstorlek du angav första gången. Du kan sedan gå in och redigera portionsstorleken, samt lägga till en anteckning, tex "En stor banan 130 gram" eller "1 dl okokt ris" så du i framtiden minns. Anteckningen syns när du loggar maten i vanliga vyn.
+    </p>
+    <p><b>Vad är en anpassad matvara?</b>
+    <br>En anpassad matvara är en matvara som saknas i databasen och du vill lägga in själv, med näringsvärden och portionsstorlek. Kan även användas till tex kosttillskott.   </p>
 
     </section>
 
