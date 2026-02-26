@@ -276,7 +276,17 @@
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
       <p>
-        <ul><b>25 februari - Build 11</b>
+        <b>26 februari - Version 1.5.1 - Build 12 </b>
+        <ul>
+        <li>En total refaktorering av Settings - Nutrients-sidan. Bör nu se likadan ut som Om och Konfigurera. Allt är nu localized och finns på Svenska och Engelska</li>
+        <li>En liten förklaringstext på Matloggningssidan om inget är loggat för dagen.</li>
+        <li>Efter att ha beräknat en maträtt och loggat en portion, går det nu att spara den portionen som en matgrupp och logga den igen.</li>
+        <li>I pop-upen för att editera en matvara, finns det nu en tydligare Spara-knapp och cancel-knapp för att undvika misstag.</li>
+
+      </ul></p>
+
+      <p><b>25 februari - Build 11</b>
+        <ul>
         <li>En mycket mer kompakt och bättre design av Veckojämförelse och Målanalys på iOS, två rader istället för fyra. </li>
         <li>Målanalysen visar nu tidigare veckors måluppfyllelse som hela veckor istället för rullande 7 dagar.</li>
         <li>Mer kompakt design i Korrelationsanalyser på iOS, mer info går att fälla ut.</li>
@@ -285,16 +295,18 @@
         <li>Det går nu att skapa upp till 10 egna faktorer (tidigare gräns på tre).</li>
         <li>En fix så att loggade symptom syns förifyllda i Health entry (vilket de inte alltid gjorde). Tog bort alternativet att logga symtom utan klockslag för att göra det enklare för användare.</li>
         <li>(Mac-versionen har nu en edit-knapp på matentries som på iOS.)</li>
-  
       </ul>
-
-        <ul><b>24 februari - Build 10</b>
+      </p>
+<p></p>
+        <b>24 februari - Build 10</b>
+        <ul>
         <li>Fixade en bugg som kunde dyka upp om man fått många errors i DABAS-sökningen i rad. </li>
         <li>Appen hämtar nu om data från Apple health varje gång användaren går in i Health entry, samt om du drar ned på sidan (inte bara vid omstart av appen). </li>
         <li>När man skapar/redigerar anpassad mat kan man nu se näringsvärden på engelska eller svenska utan att behöva byta språk i appen</li>
         <li>Det går nu att välja att sätta mål för fett, kolhydrater och protein i form av procent av energiintaget istället för gram om man så önskar.</li>
-      </ul>
-        <ul><b>23 februari</b>
+      </ul></p>
+      <p><b>23 februari</b>
+        <ul>
         <li>Build 9: Scrollning tar bort tangentbordet på iOS.</li>
         <li>Build 9: Om ett näringsämne är påslaget men har 0 i mål så syns det nu ändå, men utan ett mål. </li>
         <li>Build 9: När man börjar redigera portionsstorlek, så tas 100 bort.</li>
@@ -302,7 +314,9 @@
         <li>Build 7: Fixade en bugg i hur kalorier visades på iOS. </li>
         <li>Build 6: Appen hämtar nu vilometabolism från Apple health och visar en uppskattning (medel för de senaste 30 dagarna) under dagen, uppdaterar vid dagens slut med rätt siffra.</li>
         </ul>
-        <ul><b>20 februari</b>
+        </p>
+        <p><b>20 februari</b>
+        <ul>
           <li>iCloud synk - nu synkas data mellan iOS och MacOS-apparna. </li>
           <li>Apple health integration. Nu hämtar appen in sömndata och träningsdata från Apple Health. </li>
           <li>Mediciner är tillagda, nu kan du logga mediciner och klockslag i FoodBadger om du har mediciner som tas flera gånger per dag. (Appen hämtar ej från Apple Health.) </li>
@@ -310,8 +324,9 @@
           <li>En setup-guide för nya användare är skapad för att ställa in inställningarna för första gången. (Går att starta igen från Inställningar) </li>
           <li>Många småfixar för att fixa utseende, bättre interaktion på iOS etc. </li>
           </ul>
-          
-          <ul><b>19-22 Januari 2026</b>
+          </p>
+          <p><b>19-22 Januari 2026</b>
+          <ul>
           <li>Ny integration mot DABAS matdatabas. Här finns massor av färdiga matvaror och märken (tex Arla, Anamma, etc). Just nu är det en egen sökruta, för att undvika att få 353 träffar på “apelsin” med produkter med apelsin i namnet när man bara vill ha en apelsin från Livsmedelsverket.</li> 
           <li>I matloggningen finns nu en “Beräkna måltid” där man kan fylla i ingredienserna för en hel maträtt och sen få sin egen portion uträknad.</li> 
           <li>Set up/Konfigurera - Här finns nu fyra möjliga mål för vad man vill använda appen till, som hjälper användare att ställa in rätt näringsvärden/faktorer för olika mål. </li>
@@ -321,8 +336,6 @@
           <li>Goals analysis/Måluppfyllelse kan nu även visa tidigare veckors måluppfyllelse och inte bara senaste veckan. </li>
           <li>Buggfixar: Fibrer kunde på vissa ställen dyka upp dubbelt. - Näringsvärden på en custom food kan nu skrivas in med både komma och punkt. - Några näringsvärden hade fel namn på svenska i overview (järn, kalium) - Funktionalitet för att spara data även när en anpassad matvara raderas.</li>
 </li>
-
-
         </ul>
       </p>
     </section>
@@ -330,12 +343,12 @@
     <section id="planned-features" class="section-card">
       <h2>Feature requests:</h2>
       <ul>
-        <li>Bugg: Settings, headern "Näringsämnen" overflowar. Cursor har gått bet på problemet nu fem gånger. </li>
-      <li>Spara en beräknad maträtt för att kunna logga den igen. Matgrupp?</li>
       <li>Eventuellt ordna iCloud-synken på riktigt. Större omarbetning av appen krävs. </li>
       <li>Korrelationer mellan symtom och medicinintag över dagen. Större feature. </li>
       <li>Hämta sömnpoäng från Apple Health? Eller behålla som manuell subjektiv uppskattning?</li>
       <li>Kunna logga vikt i Health entry, visa i Overview. Ev trendgraf.</li>
+      <li>Done: I editera matvara, ta bort "Klar", ha "Avbryt" eller "Spara" istället.</li>
+      <li>Done: Spara en beräknad maträtt för att kunna logga den igen. Som en matgrupp?</li>
       <li>Done: Fixa setup-guide, så användaren kan skapa faktorer där och inte bara symptom</li>
       <li>Done: Visa näringsämnen på engelska + svenska i redigera anpassad mat.</li>
       <li>Done: Kunna sätta mål för fett och kolhydrater i form av procent av energiintaget istället för gram.</li>
@@ -348,7 +361,7 @@
     </section>
 
     <section id="FAQ" class="section-card">
-      <h2>FAQ</h2>
+    <h2>FAQ</h2>
     <p><b>Hur beräknar appen vilken träning som är low/medium/high?</b></p>
     <p>I första hand används användarens pulzoner från Apple health. Om det saknas hämtas ålder från Apple health, och maxpuls räknas ut med den klassiska 220-ålder-beräkningen. Om det saknas, används ett default max-HR. 
     <br>High: över 85% av max-HR.
