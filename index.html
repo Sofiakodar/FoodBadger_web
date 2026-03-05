@@ -275,13 +275,15 @@
 
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
-      <p><b>5 Mars - Build 16</b>
+      <p><b>5 Mars - Build 16+17</b>
       <ul>
         <li>Vikt visas nu i Veckoanalys. Alltid orange, eftersom användaren inte anger om mer/mindre är bättre.</li>
         <li>Ev onödiga mellanslag i sökrutorna ska inte påverka resultatet Livsmedelsverket eller DABAS.</li>
         <li>Nu går det att skapa egna numeriska faktorer, tex antal steg, antal koppar kaffe, antal timmar fasta. Dessa funkar givevis med korrelationer.</li>
         <li>Korrelationer för mediciner utgår ifrån om medicinen är tagen eller ej, samt hur många doser/loggningar per dag. Detta gäller från det datumet medicinen blev skapad i appen (så inte tidigare dagar räknas som inte-medicin och bidrar till felaktigt data.)</li>
         <li>Det går nu att välja vilken tid för en medicin togs i Health entry.</li>
+        <li>Build 17: Fixat ett udda race condition i icloud-synken så inte data ska kunna försvinna.</li>
+        <li>Build 17: Veckodag visas nu högst upp bredvid datum i Health entry och Food logging, för att göra det lättare när man loggar bakåt i tiden. </li>
       </ul>
 
     </p>
