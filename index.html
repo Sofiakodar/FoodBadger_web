@@ -211,9 +211,9 @@
 <li>Logga faktorer: träning, meditation, alkohol, dagsljus, egna faktorer. </li>
 <li>Logga hälsa: sömn, energi, humör, symtom m.m. </li>
 <li>Få en analys av hur den senaste veckan har varit jämfört med tidigare. </li>
-<li>Se sitt näringsintag och jämföra med mål (vitaminer, mineraler, kalorier).</li>
+<li>Se ditt näringsintag och jämföra med mål (vitaminer, mineraler, kalorier).</li>
 <li>Se korrelationer mellan faktorer och hälsa, sömn eller energi. </li>
-<li>Logga ditt blodtryck och se vilken mat eller faktorer som påverkar. </li>
+<li>Logga ditt blodtryck eller egna symptom och se vilken mat eller faktorer som påverkar. </li>
 </ul>
 <ul><b>Exempel på frågor denna app är skapad för att besvara:</b>
 <li>Finns det specifika matvaror som ger mig huvudvärk/symtom?</li>
@@ -229,7 +229,9 @@
 <li>Logga ett ungefärligt näringsintag för att upptäcka korrelationer med kalium, salt och socker.</li>
 <li>Logga enbart faktorer och hälsa, och se korrelationer mellan dessa (Träningens effekt på sömnen tex) eller använd som en habit tracker.</li>
 </ul>
-      </p>
+Appen innehåller två matdatabaser du kan söka matvaror i: Livsmedelsverket och DABAS. Appen hämtar sömn- och träningsdata från Apple Health om du har en fitnesstracker.
+FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan iOS och MacOS.
+<img src="FoodPlate_180.png" alt="" class="logo-icon"></p>
     </section>
 
     <section id="getting-started" class="section-card">
@@ -275,13 +277,23 @@
 
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
+      <p><b>7 mars - Build 18</b>
+      <ul>
+        <li>Det går nu att dela Favoriter och anpassade matvaror med en vän. De kan exporteras och importeras som CSV-filer. Vid import väljer användaren själv vilka de vill importera.</li>
+        <li>Det går nu att dela matgrupper med en vän. De kan exporteras och importeras som CSV-filer. Här finns lite roliga use cases om mottagaren inte har en matvara pga DABAS-matvara eller custom food. Testa gärna!</li>
+        <li>Info-text vid vissa inbyggda faktorer.</li>
+        <li>Morgonljus (tidigare solljus) har bytt namn till Morgonljus. (Inklusive en refaktorering av hårdkodade faktorer.)</li>
+        <li>Färgkodning av Blodtrycksresultat i Overview. Kort info-text i Genomsnittsuträkningen.</li>
+        <li>Minifix: Tiden vid medicinloggningen ska nu alltid visa korrekt tid på iOS. </li>
+      </ul>
+      </p>
       <p><b>5 Mars - Build 16+17</b>
       <ul>
         <li>Vikt visas nu i Veckoanalys. Alltid orange, eftersom användaren inte anger om mer/mindre är bättre.</li>
         <li>Ev onödiga mellanslag i sökrutorna ska inte påverka resultatet Livsmedelsverket eller DABAS.</li>
         <li>Nu går det att skapa egna numeriska faktorer, tex antal steg, antal koppar kaffe, antal timmar fasta. Dessa funkar givevis med korrelationer.</li>
         <li>Korrelationer för mediciner utgår ifrån om medicinen är tagen eller ej, samt hur många doser/loggningar per dag. Detta gäller från det datumet medicinen blev skapad i appen (så inte tidigare dagar räknas som inte-medicin och bidrar till felaktigt data.)</li>
-        <li>Det går nu att välja vilken tid för en medicin togs i Health entry.</li>
+        <li>Det går nu att välja vilken tid för medicin togs i Health entry. Det finns nu också en "Överhoppad" för mediciner för korrekta korrelationer.</li>
         <li>Build 17: Fixat ett udda race condition i icloud-synken så inte data ska kunna försvinna.</li>
         <li>Build 17: Veckodag visas nu högst upp bredvid datum i Health entry och Food logging, för att göra det lättare när man loggar bakåt i tiden. </li>
       </ul>
@@ -372,9 +384,9 @@
     <section id="planned-features" class="section-card">
       <h2>Feature requests:</h2>
       <ul>
+      <li>Kunna dela en anpassad matvara eller matgrupp med andra användare. </li>
       <li>Eventuellt ordna iCloud-synken på riktigt. Större omarbetning av appen krävs. </li>
-      <li>Korrelationer mellan symtom och medicinintag över dagen. Större feature. </li>
-      <li>Hämta sömnpoäng från Apple Health? Eller behålla som manuell subjektiv uppskattning?</li>
+      <li>Korrelationer mellan symtom och medicinintag över dagen beroende på tid. Större feature. </li>
       <li>Done: Veckojämförelse säger senaste 7 dagarna, men menar kalendervecka. Fixa. </li>
       <li>Done: Kunna logga vikt i Health entry, visa i Overview. </li>
       <li>Done: I editera matvara, ta bort "Klar", ha "Avbryt" eller "Spara" istället.</li>
@@ -385,6 +397,7 @@
       <li>Done:Mac-version: Editera matentries som på iOS.</li>
     </ul>
     <ul><b>Rapporterade buggar</b>
+    <li>Åtgärdad: iCloud race condition skapade ny databas. </li>
     <li>Åtgärdad: Sömndata saknas i appen, efter start kl 04. Krävde omstart av appen.</li>
     <li>Åtgärdad: Ful röd 404 när man söker i DABAS och sen hacking upplevelse i söken ibland.</li>
   </ul>
