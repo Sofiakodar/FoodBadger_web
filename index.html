@@ -56,7 +56,7 @@
     }
 
     .header-inner {
-      max-width: 720px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -135,6 +135,7 @@
     }
 
     #about h2::before { content: "About"; }
+    #gallery h2::before { content: "Screenshots"; }
     #getting-started h2::before { content: "Getting started"; }
     #release-notes h2::before { content: "Release notes"; }
 
@@ -170,6 +171,99 @@
       border: 1px solid var(--border);
     }
 
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .gallery-thumb {
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      background: var(--bg);
+    }
+    .gallery-thumb:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      padding: 48px 64px;
+    }
+    .gallery-overlay.is-open {
+      display: flex;
+    }
+    .gallery-overlay-inner {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gallery-overlay img {
+      max-width: 100%;
+      max-height: calc(100vh - 120px);
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .gallery-overlay-caption {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      margin-top: 12px;
+      text-align: center;
+    }
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .gallery-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .gallery-btn-prev { left: 16px; }
+    .gallery-btn-next { right: 16px; }
+    .gallery-btn-close {
+      top: 16px;
+      right: 16px;
+      transform: none;
+      font-size: 28px;
+      line-height: 1;
+    }
+    .gallery-overlay-backdrop {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
     @media (max-width: 600px) {
       .header-inner {
         flex-direction: column;
@@ -179,6 +273,11 @@
       .section-card {
         padding: 20px 24px;
       }
+
+      .gallery-overlay { padding: 24px 44px; }
+      .gallery-btn { width: 40px; height: 40px; font-size: 20px; }
+      .gallery-btn-prev { left: 8px; }
+      .gallery-btn-next { right: 8px; }
     }
   </style>
 </head>
@@ -191,6 +290,7 @@
       </a>
       <nav>
         <a href="#about">About</a>
+        <a href="#gallery">Screenshots</a>
         <a href="#getting-started">Getting started</a>
         <a href="#release-notes">Release notes</a>
         <a href="#planned-features">Planerade features</a>
@@ -203,7 +303,7 @@
     <section id="about" class="section-card">
       <h2>FoodBadger</h2>
       <p>
-        FoodBadger är en app för att logga mat och aktiviteter och se hur de påverkar ens hälsa. Den är framför allt gjord för de som har symtom som de vill förbättra med livsstilsfaktorer och kost (tex högt blodtryck) eller de som vill ha koll på att de får i sig rätt näringsvärden med kosten.
+        FoodBadger är en app för att logga mat och aktiviteter och se hur de påverkar ens hälsa. Den är framför allt gjord för de som har symtom som de vill förbättra med livsstilsfaktorer och kost (tex huvudvärk eller högt blodtryck) eller de som vill ha koll på att de får i sig rätt näringsvärden med kosten.
 </p>
 <p>
   <ul><b>I appen kan du:</b>
@@ -227,12 +327,42 @@
 <li>Logga all mat du äter och få en tydlig bild av om du får i dig de näringsämnen du bryr dig om. Se hur det påverkar din hälsa. </li>
 <li>Logga bara de matvaror som du tror påverkar dig (tex laktos, socker). </li>
 <li>Logga ett ungefärligt näringsintag för att upptäcka korrelationer med kalium, salt och socker.</li>
-<li>Logga enbart faktorer och hälsa, och se korrelationer mellan dessa (Träningens effekt på sömnen tex) eller använd som en habit tracker.</li>
+<li>Logga enbart faktorer och hälsa, och se korrelationer mellan dessa (hur träning påverkar sömnen tex) eller använd som en habit tracker.</li>
 </ul>
-Appen innehåller två matdatabaser du kan söka matvaror i: Livsmedelsverket och DABAS. Appen hämtar sömn- och träningsdata från Apple Health om du har en fitnesstracker.
-FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan iOS och MacOS.
-<img src="FoodPlate_180.png" alt="" class="logo-icon"></p>
+<p>Appen innehåller två matdatabaser du kan söka matvaror i: Livsmedelsverket och DABAS. Appen hämtar sömn- och träningsdata från Apple Health om du har en fitnesstracker.
+FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan iOS och MacOS.</p>
+<p>Du kan ställa in appen så att den passar dina behov. Du väljer själv vilka hälsoutfall du är intresserad av och vilka faktorer du vill logga. Du kan ställa vilka näringsämnen du vill ha koll på samt vilka mål du har.</p>
+
     </section>
+
+    <section id="gallery" class="section-card">
+      <h2>Screenshots</h2>
+      <p style="margin-bottom: 16px; color: var(--text-secondary);">Klicka på en bild för att förstora. Använd pilarna eller piltangenterna för att bläddra.</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <button type="button" class="gallery-thumb" data-src="search_food.png" data-caption="Sök matvaror i Livsmedelsverket eller DABAS."><img src="search_food.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="food_log_today.PNG" data-caption="Dagens mat."><img src="food_log_today.PNG" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="nutrients.png" data-caption="Dagens näringsintag mot dina mål."><img src="nutrients.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="macro.PNG" data-caption="Dagens näringsfördelning i Kolhydrater/Protein/Fett."><img src="macro.PNG" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="health_entry.png" data-caption="Logga hälsa som sömn, energi, humör, symtom m.m. Sömn hämtas från Apple health om du har data där. Du kan logga blodtryck om du vill."><img src="health_entry.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="health_entry2.png" data-caption="Logga faktorer som påverkar dig. Träning hämtas från Apple Health eller kan läggas in manuellt."><img src="health_entry2.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="symptom.PNG" data-caption="Ha koll på dina symptom (skapa egna) och logga mediciner."><img src="symptom.PNG" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="veckoanalys.png" data-caption="Veckoanalys över hur det har gått jämfört med tidigare veckor. Det finns även målanalys."><img src="veckoanalys.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="korrelation.png" data-caption="Hitta korrelationer mellan mat, faktorer och hälsa."><img src="korrelation.png" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="matgrupper.PNG" data-caption="Du kan skapa matgrupper/maträtter så att det går fort att logga igen. Du kan även dela dem med en vän."><img src="matgrupper.PNG" alt=""></button>
+        <button type="button" class="gallery-thumb" data-src="egen_mat.PNG" data-caption="Du kan lägga in egna matvaror om de saknas i databaserna. De går också att dela."><img src="egen_mat.PNG" alt=""></button>
+      </div>
+    </section>
+
+    <div class="gallery-overlay" id="gallery-overlay" aria-hidden="true">
+      <span class="gallery-overlay-backdrop" id="gallery-overlay-backdrop" aria-label="Stäng"></span>
+      <button type="button" class="gallery-btn gallery-btn-prev" id="gallery-prev" aria-label="Föregående">‹</button>
+      <button type="button" class="gallery-btn gallery-btn-next" id="gallery-next" aria-label="Nästa">›</button>
+      <button type="button" class="gallery-btn gallery-btn-close" id="gallery-close" aria-label="Stäng">×</button>
+      <div class="gallery-overlay-inner">
+        <img id="gallery-overlay-img" src="" alt="">
+        <p class="gallery-overlay-caption" id="gallery-overlay-caption"></p>
+      </div>
+    </div>
 
     <section id="getting-started" class="section-card">
       <h2>Kom igång</h2>
@@ -277,6 +407,16 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
 
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
+      <p><b>8 mars - build 20</b>
+      <ul>
+        <li>Nu visas näringsämnena som rader istället för boxar i Dagens mat. Matchande layouten i Veckoanalys och Målanalys.</li>
+        <li>Det går nu inte att radera en anpassad matvara som är del av en matgrupp. Det går inte heller att radera en anpassad matvara man loggat tidigare, för att undvika massor av "Maten finns inte längre"-entries.</li>
+        <li>Näringsämnena visas nu i standardordning när du skapar en egen matvara (dvs Energi, Fett, Koldrat, Fiber...) för att matcha innehållsförteckningar bättre.</li>
+        <li>Standard näringsämnen visas i standardordning i Daglig mat, sedan resten i alfabetisk ordning.</li>
+        <li>Resdesign av alla knappar i appen. De ska förhoppningsvis vara lite snyggare nu.</li>
+        <li>Tagit bort onödiga rubriker.</li>
+      </ul>
+      </p>
       <p><b>7 mars - Build 18+19</b>
       <ul>
         <li>Build 19: Det går nu att logga Matgrupper idag direkt från Matgrupps-sidan.</li>
@@ -418,5 +558,60 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
     </section>
 
   </main>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('gallery-overlay');
+      var overlayImg = document.getElementById('gallery-overlay-img');
+      var overlayCaption = document.getElementById('gallery-overlay-caption');
+      var thumbs = document.querySelectorAll('#gallery-grid .gallery-thumb');
+      var prevBtn = document.getElementById('gallery-prev');
+      var nextBtn = document.getElementById('gallery-next');
+      var closeBtn = document.getElementById('gallery-close');
+      var backdrop = document.getElementById('gallery-overlay-backdrop');
+      var items = Array.from(thumbs).map(function (t) {
+        return { src: t.getAttribute('data-src'), caption: t.getAttribute('data-caption') || '' };
+      });
+      var currentIndex = 0;
+
+      function show(index) {
+        currentIndex = (index + items.length) % items.length;
+        overlayImg.src = items[currentIndex].src;
+        overlayCaption.textContent = items[currentIndex].caption;
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function hide() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      thumbs.forEach(function (thumb, i) {
+        thumb.addEventListener('click', function () {
+          show(i);
+        });
+      });
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        show(currentIndex - 1);
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        show(currentIndex + 1);
+      });
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        hide();
+      });
+      backdrop.addEventListener('click', hide);
+      document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('is-open')) return;
+        if (e.key === 'Escape') hide();
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); show(currentIndex - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); show(currentIndex + 1); }
+      });
+    })();
+  </script>
 </body>
 </html>
