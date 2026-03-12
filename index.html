@@ -289,7 +289,7 @@
   <header>
     <div class="header-inner">
       <a href="#" class="logo">
-        <img src="FoodPlate_180.png" alt="" class="logo-icon">
+        <img src="AppIcon.jpg" alt="" class="logo-icon">
         FoodBadger
       </a>
       <nav>
@@ -402,20 +402,20 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
       </p>
         
         <h3>iCloud</h3>
-        <p>
-        Appen sparar ditt data i iCloud så data synkas mellan iOS och MacOS.
-        </p>
-        <p>
-        <b>OBS:</b> i dagsläget är denna synk inte perfekt, så använd helst inte iOS-versionen och MacOS-versionen samtidigt eller inom ett par minuter. Då kan i värsta fall några entries försvinna om filerna är i osynk (tex en mat du registrerat försvinner). Detta är tyvärr en stor sak att fixa senare. Om du väntar <b>minst 30 minuter</b> mellan att använda Mac- och iOS-versionen så har iCloud hunnit synka klart och då ska allt fungera fint. 
-              </p>
+        <p>Detta är fixat.       </p>
     </section>
 
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
+      <p><b>12 mars - build 24</b></p>
+      <ul>
+        <li>En större omarbetning av <b>iCloud sync</b>, så att det nu fungerar mycket bättre. Alla data synkas mellan iOS och MacOS korrekt nu och det kommer upp ett meddelande om när sync pågår.</li>
+        <li>User <b>data-exporten</b> på iOS fungerar bättre.</li>
+      </ul>
       <p><b>10 mars - build (22+)23</b>
         <ul>
-          <li>Nu går det att automatiskt logga en matgrupp som alltid äts/tas (tex vitaminer eller frukost) varje dag du öppnar appen. Det går givetvis att ta bort matvarorna manuellt den dagen. Finns som alternativ på matgrupper.</li>
-          <li>Macronäringsämnen-baren visar nu även fibrer, för att ge en mer rättvisande bild av energifördelningen (ingår inte i de tre andra).</li>
+          <li>Nu går det att <b>automatiskt logga en matgrupp</b> som alltid äts/tas (tex vitaminer eller frukost) varje dag du öppnar appen. Det går givetvis att ta bort matvarorna manuellt den dagen. Finns som alternativ på matgrupper.</li>
+          <li>Macronäringsämnen-baren visar nu även <b>fibrer</b>, för att ge en mer rättvisande bild av energifördelningen (ingår inte i de tre andra).</li>
           <li>Ny app-ikon.</li>
         </ul>
         </p>
@@ -424,9 +424,9 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
       </p>
       <p><b>8 mars - build 20</b>
       <ul>
-        <li>Nu visas näringsämnena som rader istället för boxar i Dagens mat. Matchande layouten i Veckoanalys och Målanalys.</li>
+        <li>Nu visas näringsämnena som <b>rader</b> istället för boxar i Dagens mat. Matchande layouten i Veckoanalys och Målanalys.</li>
         <li>Det går nu inte att radera en anpassad matvara som är del av en matgrupp. Det går inte heller att radera en anpassad matvara man loggat tidigare, för att undvika massor av "Maten finns inte längre"-entries.</li>
-        <li>Näringsämnena visas nu i standardordning när du skapar en egen matvara (dvs Energi, Fett, Kolhydrater, Fiber...) för att matcha innehållsförteckningar bättre.</li>
+        <li>Näringsämnena visas nu i <b>standardordning</b> när du skapar en egen matvara (dvs Energi, Fett, Kolhydrater, Fiber...) för att matcha innehållsförteckningar bättre.</li>
         <li>Standard näringsämnen visas i standardordning i Daglig mat, sedan resten i alfabetisk ordning.</li>
         <li>Resdesign av alla knappar i appen. De ska förhoppningsvis vara lite snyggare nu.</li>
         <li>Tagit bort onödiga rubriker.</li>
@@ -439,8 +439,8 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
         <li>Build 19: Justeringar av utseendet för Favoriter, Anpassade matvaror och Matgrupper.</li>
         <li>Build 19: Justering av utseendet av Overview på MacOS, så att det är lättare att filtrera vad som ska visas.</li>
         <li>Build 19: När du skapar en anpassad matvara, kan du switcha på så alla näringsvärden visas, inte bara de du för tillfället spårar.</li>
-        <li>Det går nu att dela Favoriter och anpassade matvaror med en vän. De kan exporteras och importeras som CSV-filer. Vid import väljer användaren själv vilka de vill importera.</li>
-        <li>Det går nu att dela matgrupper med en vän. De kan exporteras och importeras som CSV-filer. Här finns lite roliga use cases om mottagaren inte har en matvara pga DABAS-matvara eller custom food. Testa gärna!</li>
+        <li>Det går nu att <b>dela Favoriter och anpassade matvaror med en vän</b>. De kan exporteras och importeras som CSV-filer. Vid import väljer användaren själv vilka de vill importera.</li>
+        <li>Det går nu att <b>dela matgrupper med en vän</b>. De kan exporteras och importeras som CSV-filer. Här finns lite roliga use cases om mottagaren inte har en matvara pga DABAS-matvara eller custom food. Testa gärna!</li>
         <li>Info-text vid vissa inbyggda faktorer.</li>
         <li>Morgonljus (tidigare solljus) har bytt namn till Morgonljus. (Inklusive en refaktorering av hårdkodade faktorer.)</li>
         <li>Färgkodning av Blodtrycksresultat i Overview. Kort info-text i Genomsnittsuträkningen.</li>
