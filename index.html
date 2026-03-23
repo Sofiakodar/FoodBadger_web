@@ -407,6 +407,15 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
 
     <section id="release-notes" class="section-card">
       <h2>Release notes</h2>
+      <p><b>21 mars - build 29</b>
+      <ul>
+        <li>Förändring i pulszoner, de var lite väl högt satta. Låg intensitet < 50% av maxpuls. Medium intensitet 50-80% av maxpuls. Hög intensitet över 80% av maxpuls.</li>
+        <li>Fix för user data import på iOS så att den är mer tillförlitlig. Nu fungerar även portionstorlekarna i matgrupper korrekt. – Gör gärna en ny backup. </li>
+        <li>Det går nu att logga en tidigare matvara igen på ett annat datum. (Öppna matvaran, välj "Logga igen".) </li>
+        <li>Ny layout på Korrelationsanalysen på MacOS och iOS. Det går nu att visa dem efter hur stark korrelationen är, eller efter faktornamn, om du vill se olika effekter från samma näringsämne/faktor.</li>
+        <li>Omarbetad korrelationsanalys och beskrivningar på både MacOS och iOS så att det är lättare att förstå korrelationerna. Hur mycket påverkar det? Gör det skillnad om du uppnår målet du satt för ett näringsämne?</li>
+      </ul>
+      </p>
       <p><b>13 mars - build 26+27</b>
       <ul>
         <li>Tydligare meddelanden om när appen syncar och om sync inte går igenom. (Sync sker när appen startar, samt är i background/inaktiv.)</li>
@@ -566,11 +575,12 @@ FoodBadger finns för iOS och MacOS. Data sparas i iCloud så data synkas mellan
     <section id="FAQ" class="section-card">
     <h2>FAQ</h2>
     <p><b>Hur beräknar appen vilken träning som är low/medium/high?</b></p>
+    <p>Appen hämtar bara in data från <b>träningssessioner</b> i Apple Health, ej en minut ökad puls här och där när du går uppför en trappa. </p>
     <p>I första hand används användarens pulzoner från Apple health. Om det saknas hämtas ålder från Apple health, och maxpuls räknas ut med den klassiska 220-ålder-beräkningen. Om det saknas, används ett default max-HR. 
-    <br>High: över 85% av max-HR.
-    <br>Medium: 70-85% av max-HR. 
-    <br>Low: under 70% av max-HR. </p>
-    <p>Om heart-rate data saknas, men effort i Apple health finns, utgår vi från effort. </p>
+    <br>High: över 80% av max-HR.
+    <br>Medium: 50-79% av max-HR. 
+    <br>Low: under 50% av max-HR. </p>
+    <p>Om heart-rate data saknas, men effort i Apple health finns, utgår vi från effort (1-3 low, 4-6 medium, 7-10 high). </p>
     <p>Om ingen effort finns, utgår vi från workout-type. High: löpning, HIT, boxing. etc. Medium: cykling, simning, vandring etc. Low: yoga, pilates, promenader. 
     </p>
     <p><b>Vad menas med favoriter i matvaror?</b>
